@@ -27,6 +27,8 @@ module.exports = merge(common, {
               modules: {
                 auto: true,
                 localIdentName: '[hash:base64:8]',
+                exportLocalsConvention: 'camelCase',
+                namedExport: false,
               },
             },
           },
@@ -52,7 +54,12 @@ module.exports = merge(common, {
         test: /\.css$/i,
         use: [
           MiniCssExtractPlugin.loader,
-          'css-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: false,
+            },
+          },
           {
             loader: 'postcss-loader',
             options: {

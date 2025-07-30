@@ -9,7 +9,10 @@
       "Bash(true)",
       "Bash(curl:*)",
       "Bash(npm run build:*)",
-      "Bash(npx tsc:*)"
+      "Bash(npx tsc:*)",
+      "Bash(npm run lint:*)",
+      "Bash(rm:*)",
+      "Bash(npm run type-check:*)"
     ],
     "deny": []
   }

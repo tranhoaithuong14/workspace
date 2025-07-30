@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import type { FC, FormEvent } from 'react';
+import type { FC, FormEvent, ChangeEvent } from 'react';
 
 import styles from './Contact.module.less';
 
@@ -22,7 +22,7 @@ const Contact: FC = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
     setFormData(prev => ({
