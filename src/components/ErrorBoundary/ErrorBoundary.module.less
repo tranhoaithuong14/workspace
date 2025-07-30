@@ -1,0 +1,107 @@
+@import '../../styles/variables.less';
+
+.errorBoundary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  padding: @space-xl;
+  background-color: lighten(@error-color, 45%);
+  border: 1px solid lighten(@error-color, 30%);
+  border-radius: @border-radius-lg;
+  margin: @space-lg;
+}
+
+.errorContent {
+  text-align: center;
+  max-width: 600px;
+}
+
+.errorTitle {
+  color: @error-color;
+  font-size: 1.5rem;
+  margin-bottom: @space-md;
+}
+
+.errorMessage {
+  color: @text-color;
+  margin-bottom: @space-lg;
+  line-height: 1.6;
+}
+
+.errorDetails {
+  margin: @space-lg 0;
+  text-align: left;
+  background-color: #fff;
+  border: 1px solid @border-color-base;
+  border-radius: @border-radius-base;
+  padding: @space-md;
+
+  summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: @text-color;
+    margin-bottom: @space-sm;
+  }
+}
+
+.errorStack {
+  background-color: @background-color-light;
+  padding: @space-md;
+  border-radius: @border-radius-sm;
+  font-family: 'Courier New', monospace;
+  font-size: @font-size-sm;
+  color: @error-color;
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.errorActions {
+  display: flex;
+  gap: @space-md;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.retryButton,
+.refreshButton {
+  padding: @space-sm @space-lg;
+  border: none;
+  border-radius: @border-radius-base;
+  font-size: @font-size-base;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 120px;
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: @box-shadow-card;
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.retryButton {
+  background-color: @primary-color;
+  color: #fff;
+
+  &:hover {
+    background-color: darken(@primary-color, 10%);
+  }
+}
+
+.refreshButton {
+  background-color: #fff;
+  color: @text-color;
+  border: 1px solid @border-color-base;
+
+  &:hover {
+    background-color: @background-color-light;
+    border-color: @primary-color;
+  }
+}

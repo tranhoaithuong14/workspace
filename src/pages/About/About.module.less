@@ -1,0 +1,132 @@
+@import '../../styles/variables.less';
+
+.about {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: @space-lg 0;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: @space-xl;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: @text-color;
+  margin-bottom: @space-md;
+
+  @media (max-width: @screen-md) {
+    font-size: 2rem;
+  }
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: @text-color-secondary;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: @space-xl;
+}
+
+.section {
+  h2 {
+    font-size: 1.75rem;
+    color: @primary-color;
+    margin-bottom: @space-lg;
+    padding-bottom: @space-sm;
+    border-bottom: 2px solid lighten(@primary-color, 40%);
+  }
+}
+
+.techGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: @space-lg;
+}
+
+.techItem {
+  padding: @space-lg;
+  background: #fff;
+  border-radius: @border-radius-lg;
+  box-shadow: @box-shadow-card;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+  h3 {
+    color: @primary-color;
+    font-size: 1.125rem;
+    margin-bottom: @space-sm;
+  }
+
+  p {
+    color: @text-color-secondary;
+    margin: 0;
+    line-height: 1.5;
+  }
+}
+
+.featureList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: @space-sm;
+  padding: @space-lg;
+  background: lighten(@success-color, 45%);
+  border-radius: @border-radius-lg;
+  border-left: 4px solid @success-color;
+
+  li {
+    color: @text-color;
+    font-size: @font-size-base;
+    line-height: 1.6;
+    display: flex;
+    align-items: flex-start;
+    gap: @space-xs;
+  }
+}
+
+.practiceGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: @space-lg;
+}
+
+.practice {
+  padding: @space-lg;
+  background: linear-gradient(135deg, lighten(@primary-color, 45%) 0%, lighten(@primary-color, 50%) 100%);
+  border-radius: @border-radius-lg;
+  border: 1px solid lighten(@primary-color, 35%);
+
+  h3 {
+    color: @primary-color;
+    font-size: 1.125rem;
+    margin-bottom: @space-sm;
+  }
+
+  p {
+    color: @text-color;
+    margin: 0;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: @screen-sm) {
+  .techGrid,
+  .practiceGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .featureList {
+    grid-template-columns: 1fr;
+  }
+}
