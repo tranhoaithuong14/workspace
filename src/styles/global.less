@@ -186,32 +186,160 @@ img {
   align-items: center;
 }
 
-.mt-1 { margin-top: @space-xs; }
-.mt-2 { margin-top: @space-sm; }
-.mt-3 { margin-top: @space-md; }
-.mt-4 { margin-top: @space-lg; }
-.mt-5 { margin-top: @space-xl; }
+.mt-1 {
+  margin-top: @space-xs;
+}
+.mt-2 {
+  margin-top: @space-sm;
+}
+.mt-3 {
+  margin-top: @space-md;
+}
+.mt-4 {
+  margin-top: @space-lg;
+}
+.mt-5 {
+  margin-top: @space-xl;
+}
 
-.mb-1 { margin-bottom: @space-xs; }
-.mb-2 { margin-bottom: @space-sm; }
-.mb-3 { margin-bottom: @space-md; }
-.mb-4 { margin-bottom: @space-lg; }
-.mb-5 { margin-bottom: @space-xl; }
+.mb-1 {
+  margin-bottom: @space-xs;
+}
+.mb-2 {
+  margin-bottom: @space-sm;
+}
+.mb-3 {
+  margin-bottom: @space-md;
+}
+.mb-4 {
+  margin-bottom: @space-lg;
+}
+.mb-5 {
+  margin-bottom: @space-xl;
+}
 
-.ml-1 { margin-left: @space-xs; }
-.ml-2 { margin-left: @space-sm; }
-.ml-3 { margin-left: @space-md; }
-.ml-4 { margin-left: @space-lg; }
-.ml-5 { margin-left: @space-xl; }
+.ml-1 {
+  margin-left: @space-xs;
+}
+.ml-2 {
+  margin-left: @space-sm;
+}
+.ml-3 {
+  margin-left: @space-md;
+}
+.ml-4 {
+  margin-left: @space-lg;
+}
+.ml-5 {
+  margin-left: @space-xl;
+}
 
-.mr-1 { margin-right: @space-xs; }
-.mr-2 { margin-right: @space-sm; }
-.mr-3 { margin-right: @space-md; }
-.mr-4 { margin-right: @space-lg; }
-.mr-5 { margin-right: @space-xl; }
+.mr-1 {
+  margin-right: @space-xs;
+}
+.mr-2 {
+  margin-right: @space-sm;
+}
+.mr-3 {
+  margin-right: @space-md;
+}
+.mr-4 {
+  margin-right: @space-lg;
+}
+.mr-5 {
+  margin-right: @space-xl;
+}
 
-.p-1 { padding: @space-xs; }
-.p-2 { padding: @space-sm; }
-.p-3 { padding: @space-md; }
-.p-4 { padding: @space-lg; }
-.p-5 { padding: @space-xl; }
+.p-1 {
+  padding: @space-xs;
+}
+.p-2 {
+  padding: @space-sm;
+}
+.p-3 {
+  padding: @space-md;
+}
+.p-4 {
+  padding: @space-lg;
+}
+.p-5 {
+  padding: @space-xl;
+}
+
+// Fallback classes for ErrorBoundary when CSS modules fail
+.error-boundary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  padding: @space-xl;
+  background-color: lighten(@error-color, 45%);
+  border: 1px solid lighten(@error-color, 30%);
+  border-radius: @border-radius-lg;
+  margin: @space-lg;
+}
+
+.error-content {
+  text-align: center;
+  max-width: 600px;
+}
+
+.error-title {
+  color: @error-color;
+  font-size: 1.5rem;
+  margin-bottom: @space-md;
+}
+
+.error-message {
+  color: @text-color;
+  margin-bottom: @space-lg;
+  line-height: 1.6;
+}
+
+.error-actions {
+  display: flex;
+  gap: @space-md;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.retry-button,
+.refresh-button {
+  padding: @space-sm @space-lg;
+  border: none;
+  border-radius: @border-radius-base;
+  font-size: @font-size-base;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 120px;
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: @box-shadow-card;
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.retry-button {
+  background-color: @primary-color;
+  color: #fff;
+
+  &:hover {
+    background-color: darken(@primary-color, 10%);
+  }
+}
+
+.refresh-button {
+  background-color: #fff;
+  color: @text-color;
+  border: 1px solid @border-color-base;
+
+  &:hover {
+    background-color: @background-color-light;
+    border-color: @primary-color;
+  }
+}

@@ -65,7 +65,15 @@ A production-ready React Single Page Application built with modern tools and bes
    ```
    The app will be available at `http://localhost:3000`
 
-3. **Build for production:**
+3. **For CodeSandbox/Cloud IDEs:**
+   ```bash
+   npm start
+   # or
+   npm run dev:codesandbox
+   ```
+   The server is configured to accept external hosts for cloud development environments.
+
+4. **Build for production:**
    ```bash
    npm run build
    ```
@@ -74,6 +82,8 @@ A production-ready React Single Page Application built with modern tools and bes
 
 ### Development
 - `npm run dev` - Start development server with hot reload
+- `npm start` - Start development server (CodeSandbox compatible)
+- `npm run dev:codesandbox` - Start server with external host support
 - `npm run build` - Build production bundle
 - `npm run build:analyze` - Build and analyze bundle size
 
@@ -214,6 +224,13 @@ npm run build:analyze
 This opens Webpack Bundle Analyzer to visualize bundle sizes.
 
 ### Deployment Options
+
+#### CodeSandbox
+The project is pre-configured for CodeSandbox with:
+- `sandbox.config.json` - CodeSandbox configuration
+- External host support in webpack dev server
+- CORS headers for cloud development
+- `npm start` script for easy startup
 
 #### Static Hosting (Netlify, Vercel, etc.)
 ```bash

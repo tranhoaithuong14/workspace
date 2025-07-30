@@ -36,32 +36,34 @@ export class ErrorBoundary extends Component<Props, State> {
       }
 
       return (
-        <div className={styles.errorBoundary}>
-          <div className={styles.errorContent}>
-            <h2 className={styles.errorTitle}>Oops! Something went wrong</h2>
-            <p className={styles.errorMessage}>
+        <div className={styles?.errorBoundary || 'error-boundary'}>
+          <div className={styles?.errorContent || 'error-content'}>
+            <h2 className={styles?.errorTitle || 'error-title'}>
+              Oops! Something went wrong
+            </h2>
+            <p className={styles?.errorMessage || 'error-message'}>
               We apologize for the inconvenience. Please try refreshing the page
               or contact support if the problem persists.
             </p>
             {process.env.NODE_ENV === 'development' && this.state.error && (
-              <details className={styles.errorDetails}>
+              <details className={styles?.errorDetails || 'error-details'}>
                 <summary>Error Details (Development Mode)</summary>
-                <pre className={styles.errorStack}>
+                <pre className={styles?.errorStack || 'error-stack'}>
                   {this.state.error.stack}
                 </pre>
               </details>
             )}
-            <div className={styles.errorActions}>
+            <div className={styles?.errorActions || 'error-actions'}>
               <button
                 onClick={this.handleRetry}
-                className={styles.retryButton}
+                className={styles?.retryButton || 'retry-button'}
                 type='button'
               >
                 Try Again
               </button>
               <button
                 onClick={() => window.location.reload()}
-                className={styles.refreshButton}
+                className={styles?.refreshButton || 'refresh-button'}
                 type='button'
               >
                 Refresh Page

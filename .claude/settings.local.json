@@ -12,7 +12,9 @@
       "Bash(npx tsc:*)",
       "Bash(npm run lint:*)",
       "Bash(rm:*)",
-      "Bash(npm run type-check:*)"
+      "Bash(npm run type-check:*)",
+      "Bash(npm run start:*)",
+      "Bash(node:*)"
     ],
     "deny": []
   }

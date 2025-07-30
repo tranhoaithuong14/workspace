@@ -8,15 +8,23 @@ module.exports = merge(common, {
   devServer: {
     static: './dist',
     port: 3000,
+    host: '0.0.0.0',
+    allowedHosts: 'all',
     open: true,
     hot: true,
     historyApiFallback: true,
     compress: true,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
+      'Access-Control-Allow-Headers': 'X-Requested-With, content-type, Authorization',
+    },
     client: {
       overlay: {
         errors: true,
         warnings: false,
       },
+      webSocketURL: 'auto://0.0.0.0:0/ws',
     },
   },
   module: {
@@ -32,6 +40,8 @@ module.exports = merge(common, {
               modules: {
                 auto: true,
                 localIdentName: '[name]__[local]--[hash:base64:5]',
+                exportLocalsConvention: 'camelCase',
+                namedExport: false,
               },
             },
           },
@@ -63,6 +73,7 @@ module.exports = merge(common, {
             loader: 'css-loader',
             options: {
               sourceMap: true,
+              modules: false,
             },
           },
           {
